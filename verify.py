@@ -1,13 +1,13 @@
 import ecdsa
 
 # put the hex of your public key in the line below
-vk_string="1df3790aa29735e11912270b150f8c3e86e5421e68b52a0a43f69fd020d3482a37e48d87ee4bef20763002dfc7dbaa160e9a154dd4d6967b573f16f66b546037"
+vk_string="4f045a6cfacb3e67e7c5d4ddfb9f1acfe7d6dddac29869734cce5218cdab24e2d2cc72601138d6f324464df7691f819cd14e8b3752d9c463e5162aad37393ca0"
 vk = ecdsa.VerifyingKey.from_string(bytes.fromhex(vk_string),ecdsa.SECP256k1)
 
 message = b'Hello world'
 
 # put your signature for Hello world in the line below
-sig_hex = "87e91f8a3a25149e2c6f172bbfcedde78d29d0c3a7cfbf535d39d71d5b08cf9974ae48d2bc9546444240a3c3087dcf58c974ded04d1a3255b54e0dde6af075eb"
+sig_hex = "c2761ab46b3849ca44fa3b27512a7ed953a09b5bd8f6c46e30b2e4519dc74b8a1ffa1efb903f10d1874b6f654169f1594c5284ad6e58e98454af11831ebc798e"
 sig = bytes.fromhex(sig_hex)
 
 print("Checking signature")
