@@ -82,4 +82,57 @@
 	
 	\subsection{Proof of Stake}
 	
+	The requested information for Proof of Stake is as follows:
+	
+	\begin{table}[h!]
+		\centering
+		\begin{tabu} to 1.0\linewidth {|r|p{7cm}|X[l]|}
+			\hline
+			Index&Information&Value\\
+			\hline
+			6&ECDSA public key (hex)&4f045a6cfacb3e67e7c5d4ddfb9f1acfe7d6ddda\newline c29869734cce5218cdab24e2d2cc72601138d6f\newline 324464df7691f819cd14e8b3752d9c463e5162a\newline ad37393ca0\\
+			\hline
+			7&Signature of "Hello world" (hex)&eae12ab8fdbeb5635ac45edbfceb999907a5b090\newline 42eeddbd9a07a744f656b3ac7e00124086256e5\newline caf86539e68186742d593e5e8b537b9f6d7ee055\newline 57c2ef68a\\
+			\hline
+			8&Signature used to calculate hit (hex)&aa2974089248c51977f63350c3aad2757b935d68\newline a236dd777621c3ed879657d2c5e1f01d22ad16b\newline b2d37f1c2567d1daeccd4e3f1a45201f53291e2e\newline ba9e9bea3\\
+			\hline
+			9&Hit value (hex)&a135a0781dd3c0f6\\
+			\hline
+			10&Time (s) that you could forge a new block&394\\
+			\hline
+		\end{tabu}
+		\caption{Mining Puzzles: Information Requested}
+		\label{table_mining_puzzles}
+	\end{table}
+	
+	\noindent The equations used for calculating the hit value are as follows:
+	
+	\begin{equation}
+	hit_{full} = hash(sign(S_g))
+	\end{equation}
+	
+	Where the hit value is the first 8 bytes of $hit_{full}$, and $S_g$ is the generation signature for the previous block:
+	
+	$$S_g = 9737957703d4eb54efdff91e15343266123c5f15aaf033292c9903015af817f1$$
+	
+	$$sign(S_g) = aa2974089248c51977f63350c3aad2757b935d68a236dd777621c3ed879657d2c5e1f01d22ad16bb2d37f1c2567d1daeccd4e3f1a45201f53291e2eba9e9bea3$$
+	
+	$$hash(sign(S_g))[:8] = a135a0781dd3c0f6$$
+	
+	\noindent The time in seconds when you would be able to forge a new block was calculated using the following equations:
+	
+	\begin{equation}
+	T = T_b * B_e
+	\end{equation}
+	
+	\begin{equation}
+	t_{forge} = \frac{hit}{T}
+	\end{equation}
+	
+	Where $T$ is the target value (independent of time passed), $T_b$ is the base target value, $B_e$ is your effective balance, and $t_{forge}$ is the time when you can forge a new block (rounded up, in seconds):
+	
+	$$T = 1229782938247303 * 24 = 29514790517935272$$
+	
+	$$t_{forge} = \frac{11616367251628998902}{29514790517935272} = 394$$
+	
 \end{document}
