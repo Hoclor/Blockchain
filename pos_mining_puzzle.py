@@ -32,8 +32,7 @@ previous_block_header = {
 effective_balance = 24 # My user ID is pbqk24
 
 # Generate an ECDSA key pair (use the same private/public key pair)
-sk_string = "3565973495f3de1d7d91313fa18c390576f391331f21eca7696dda096be2c1f0"
-signing_key = ecdsa.SigningKey.from_string(bytes.fromhex(sk_string),ecdsa.SECP256k1)
+signing_key = ecdsa.SigningKey.generate(curve=ecdsa.SECP256k1)
 verifying_key = signing_key.get_verifying_key()
 
 print("Private key: {}".format(binascii.hexlify(signing_key.to_string())))
