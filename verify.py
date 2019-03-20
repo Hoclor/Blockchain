@@ -7,7 +7,7 @@ vk = ecdsa.VerifyingKey.from_string(bytes.fromhex(vk_string),ecdsa.SECP256k1)
 message = b'Hello world'
 
 # put your signature for Hello world in the line below
-sig_hex = "c2761ab46b3849ca44fa3b27512a7ed953a09b5bd8f6c46e30b2e4519dc74b8a1ffa1efb903f10d1874b6f654169f1594c5284ad6e58e98454af11831ebc798e"
+sig_hex = "eae12ab8fdbeb5635ac45edbfceb999907a5b09042eeddbd9a07a744f656b3ac7e00124086256e5caf86539e68186742d593e5e8b537b9f6d7ee05557c2ef68a"
 sig = bytes.fromhex(sig_hex)
 
 print("Checking signature")
