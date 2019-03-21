@@ -1,6 +1,7 @@
 # LaTeX files
 *.aux
 *.gz
+*.out
 
 # VSCode settings folder
 .vscode/
