@@ -6,7 +6,7 @@ import blockcypher
 inputs = [{'address': 'mvcM9NV5hesnSUNpZGZ9Pyt3PK8xDFmCTp'}]
 
 # Script: OP_RETURN 06 7062716b3234
-outputs = [{'value' : 0, 'script_type':"null-data", 'script': "6a067062716b323"}]
+outputs = [{'value' : 0, 'script_type':"null-data", 'script': "6a067062716b3234"}]
 #The next line creates the transaction shell, which is as yet unsigned
 unsigned_tx = blockcypher.create_unsigned_tx(inputs=inputs, outputs=outputs, coin_symbol='btc-testnet', api_key='api_key')
 #You can edit the transaction fields at this stage, before signing it.
