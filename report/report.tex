@@ -8,6 +8,7 @@
 \usepackage{tabu}
 \usepackage{gensymb}
 \usepackage{enumitem}
+\usepackage{hyperref}
 
 \captionsetup[figure]{labelfont=bf}
 \captionsetup[table]{labelfont=bf}
@@ -154,11 +155,11 @@
 			5&100 Satoshi Tx ID&bfb4090faca08fe0f1ca46883cef1bf7e7860a4df6637acb7962741d\newline b0206f29\\
 			&chain.so hyperlink&https://chain.so/tx/BTCTEST/bfb4090faca08fe0f1ca46883cef1\newline bf7e7860a4df6637acb7962741db0206f29\\
 			\hline
-			6&Proof of Burn Tx ID&\\
-			&chain.so hyperlink&\\
+			6&Proof of Burn Tx ID&611186bc95e29fc70127fce35bd9c8a7f86c46f00aecd9df4765731d2\newline 7f64d31\\
+			&chain.so hyperlink&\href{https://chain.so/tx/BTCTEST/611186bc95e29fc70127fce35bd9c8a7f86c46f00aecd9df4765731d27f64d31}{https://chain.so/tx/BTCTEST/611186bc95e29fc70127fce35bd\newline 9c8a7f86c46f00aecd9df4765731d27f64d31}\\
 			\hline
-			7&Hex used as script&\\
-			&Explanation of hex script&\\
+			7&Hex used as script&6a067062716b323\\
+			&Explanation of hex script&This script is equivalent to `OP\_RETURN 06 7062716b323'. This causes the transaction to always be marked invalid, as OP\_RETURN always outputs \emph{fail}. The `06' signals that the next 6 bytes are to be pushed onto the stack, and `7062716b323' is the result of converting `pbqk24', my USER ID, from ASCII to hex.\\
 			\hline
 		\end{tabu}
 		\caption{Bitcoin-Testnet Information}
