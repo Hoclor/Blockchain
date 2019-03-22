@@ -2,6 +2,8 @@
 *.aux
 *.gz
 *.out
+*.bbl
+*.blg
 
 # VSCode settings folder
 .vscode/
